@@ -52,7 +52,5 @@ A basic Ionic client web application which consumes the RestAPI Backend. [Covere
 
 
 
- ### Setup Node Environment
-
 
  
