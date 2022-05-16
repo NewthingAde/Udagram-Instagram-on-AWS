@@ -14,7 +14,7 @@ http://segun-udagram-dev.us-east-1.elasticbeanstalk.com/
 
    <img width="1193" alt="Screenshot 2022-05-16 at 12 18 09" src="https://user-images.githubusercontent.com/80678596/168572426-a6d263ab-5093-4186-a85d-2934ce643c74.png">
 
-# Images of the elastic beanstalk deployement screensgoot
+## Images of the elastic beanstalk deployement screenshoot
 
 <img width="1440" alt="Screenshot 2022-05-16 at 12 05 26" src="https://user-images.githubusercontent.com/80678596/168570540-2ca47ef3-a4a2-4a9c-9ec1-854b8e2420d3.png">
 
