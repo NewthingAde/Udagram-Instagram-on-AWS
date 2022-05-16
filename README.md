@@ -67,11 +67,13 @@ Helper functions will be used to handle some of these concepts and we're importi
 
 We will deploy the application by followin the process below
 
-                           `eb init`
+                                             npm run build
+                                             
+                                             eb init
 
-                           `eb create`
+                                             eb create
 
-                           `eb deploy `
+                                             eb deploy
 
 
 
