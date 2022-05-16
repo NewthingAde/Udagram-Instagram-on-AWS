@@ -1,16 +1,15 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import { filterImageFromURL, deleteLocalFiles } from './util/util';
 
 (async () => {
 
   // Init the Express application
   const app = express();
 
-  const image_url= "https://www.google.com/imgres?imgurl=https%3A%2F%2Fc.files.bbci.co.uk%2F12A9B%2Fproduction%2F_111434467_gettyimages-1143489763.jpg&imgrefurl=https%3A%2F%2Fthepetproject.in%2Fcats%2Fcat-breeds-that-have-a-long-lifespan%2F1237%2F&tbnid=Um0YBjHrLfxXfM&vet=10CAsQxiAoAWoXChMI4Kuvi4Hd9wIVAAAAAB0AAAAAEAY..i&docid=Im9b3gy1vP7I-M&w=976&h=549&itg=1&q=cat%20images&ved=0CAsQxiAoAWoXChMI4Kuvi4Hd9wIVAAAAAB0AAAAAEAY"
   // Set the network port
-  const port = process.env.PORT || 5000;
-  
+  const port = process.env.PORT || 8082;
+
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());
 
@@ -32,32 +31,33 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   //! END @TODO1
 
-  app.get( "/filterimage", async ( req, res ) => {
-    let {image_url} = req.query;
-    
-    if (!image_url){
-      res.status(400).send('Error: No image url submitted')
-    }
-    else{
-      await filterImageFromURL(image_url).then(function (image_filtered_path) {
-        res.sendFile(image_filtered_path, () => {deleteLocalFiles([image_filtered_path])
-        });
-      }).catch(function (err){
-        res.status(400).send("The requested image cannot be filtered");
-      });
-    }
-  } );
-  
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get("/", async (req, res) => {
     res.send("try GET /filteredimage?image_url={{}}")
-  } );
+  });
   
+  app.get( "/filteredimage", async ( req, res ) => {
+    let {image_url} = req.query;
+    if (!image_url){
+      res.status(400).send('Error : Empty image url submitted');
+    } else {
+      await filterImageFromURL(image_url).then( function (img_filtered_path){
+        res.sendFile(img_filtered_path, () => {       
+          deleteLocalFiles([img_filtered_path]);       
+        });   
+      }).catch(function(err){
+        res.status(400).send('The image can not be filtered - check the link submitted ');
+      });  
+
+    }
+  });
+
+
 
   // Start the Server
-  app.listen( port, () => {
-      console.log( `server running http://localhost:${ port }` );
-      console.log( `press CTRL+C to stop server` );
-  } );
+  app.listen(port, () => {
+    console.log(`server running http://localhost:${port}`);
+    console.log(`press CTRL+C to stop server`);
+  });
 })();
