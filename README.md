@@ -1,8 +1,9 @@
 
 # URL
 
-segun-udagram-dev.us-east-1.elasticbeanstalk.com 
 
+
+http://segun-udagram-dev.us-east-1.elasticbeanstalk.com/
 
 - Test Not ok (http status 400) http://segun-udagram-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg
 
