@@ -37,7 +37,7 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
     res.send("try GET /filteredimage?image_url={{}}")
   });
   
-  app.get( "/filteredimage", async ( req, res ) => {
+  app.get( "/filteredimage", async (req: Request, res: Response) => {
     let {image_url} = req.query;
     if (!image_url){
       res.status(400).send('Error : Empty image url submitted');
