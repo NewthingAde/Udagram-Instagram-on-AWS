@@ -1,7 +1,17 @@
 
-# URL
+# Elastic Beanstalk in AWS
+
+Elastic Beanstalk may is a platform among AWS that's used for deploying and scaling internet applications. In easy terms, this platform as a Platform as a Service (PaaS) takes your application code and deploys it whereas provisioning the supporting design and reckon resources needed for your code to run. Elastic Beanstalk additionally absolutely manages the fixture and security updates for those provisioned resources. 
+
+exploitation the Elastic Beanstalk platform delivers the chance to pay longer developing and fewer time managing your network, storage, o/s and compute runtimes as this can be all handled by Elastic Beanstalk. This results in faster deployment since all you would like to try and do is package up your code, feed it to Elastic stem and also the platform takes it from there.
 
 
+![full stack](https://user-images.githubusercontent.com/80678596/177052487-5b572087-27c2-40b5-b6a5-32d2e0b37a22.png)
+
+
+# Getting Started
+
+## URL
 
 http://segun-udagram-dev.us-east-1.elasticbeanstalk.com/
 
